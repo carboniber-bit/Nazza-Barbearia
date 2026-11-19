@@ -11,7 +11,7 @@ const {
 const WHATS_NUMBER = "5511981346370";
 const MAPS_URL = "https://maps.app.goo.gl/GfpdgcHVXvJEF7316";
 const INSTAGRAM_URL = "https://www.instagram.com/nazza_barbearia/";
-const ADDRESS = "Av. João de Andrade, 685 — Santo Antônio, Osasco/SP · 06132-002";
+const ADDRESS = "Av. João de Andrade, 685, Santo Antônio, Osasco/SP · 06132-002";
 const LAT = -23.5534,
   LON = -46.8009;
 const SERVICES = [{
@@ -125,7 +125,7 @@ function todayISO() {
   return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 }
 function fmtDate(iso) {
-  if (!iso) return "—";
+  if (!iso) return "a definir";
   const [y, m, d] = iso.split("-").map(Number);
   return new Date(y, m - 1, d).toLocaleDateString("pt-BR", {
     weekday: "long",
@@ -173,6 +173,139 @@ const InstaIcon = () => /*#__PURE__*/React.createElement("svg", {
   fill: "currentColor",
   stroke: "none"
 }));
+const ScissorsIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("circle", {
+  cx: "6",
+  cy: "6",
+  r: "3"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "6",
+  cy: "18",
+  r: "3"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M20 4 8.12 15.88"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M14.47 14.48 20 20"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8.12 8.12 12 12"
+}));
+const CheckIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2.4",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M20 6 9 17l-5-5"
+}));
+const XIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2.2",
+  strokeLinecap: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M18 6 6 18"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "m6 6 12 12"
+}));
+const StarIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+}));
+const StarSolidIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "currentColor",
+  stroke: "none",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+}));
+const Stars = ({
+  n = 5
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, Array.from({
+  length: n
+}, (_, i) => /*#__PURE__*/React.createElement(StarSolidIcon, {
+  key: i
+})));
+const WarnIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M12 9v4"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M12 17h.01"
+}));
+const LockIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("rect", {
+  x: "3",
+  y: "11",
+  width: "18",
+  height: "11",
+  rx: "2"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M7 11V7a5 5 0 0 1 10 0v4"
+}));
+const ExpandIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M15 3h6v6"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M9 21H3v-6"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M21 3l-7 7"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M3 21l7-7"
+}));
+const PlusIcon = () => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "2.2",
+  strokeLinecap: "round",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M12 5v14"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M5 12h14"
+}));
 
 /* ---------------- toasts ---------------- */
 let toastSeq = 0;
@@ -189,10 +322,10 @@ function Toasts({
     className: "toast " + t.kind + (t.leaving ? " leaving" : "")
   }, /*#__PURE__*/React.createElement("span", {
     className: "t-icon"
-  }, t.kind === "success" ? "✔" : t.kind === "error" ? "✖" : "✂"), /*#__PURE__*/React.createElement("span", null, t.msg), /*#__PURE__*/React.createElement("button", {
+  }, t.kind === "success" ? /*#__PURE__*/React.createElement(CheckIcon, null) : t.kind === "error" ? /*#__PURE__*/React.createElement(XIcon, null) : /*#__PURE__*/React.createElement(ScissorsIcon, null)), /*#__PURE__*/React.createElement("span", null, t.msg), /*#__PURE__*/React.createElement("button", {
     onClick: () => dismiss(t.id),
     "aria-label": "Fechar aviso"
-  }, "\u2715"))));
+  }, /*#__PURE__*/React.createElement(XIcon, null)))));
 }
 
 /* ---------------- nav ---------------- */
@@ -239,7 +372,7 @@ function Nav({
       e.preventDefault();
       go("inicio");
     },
-    "aria-label": "Nazza Barbearia \u2014 voltar ao in\xEDcio"
+    "aria-label": "Nazza Barbearia, voltar ao in\xEDcio"
   }, /*#__PURE__*/React.createElement("span", {
     className: "brand-badge"
   }, /*#__PURE__*/React.createElement("img", {
@@ -300,7 +433,7 @@ function Nav({
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "status-dot"
-  }), aberto ? "Aberto agora · fecha às 19h30" : "Fechado agora · Seg–Sáb 9h–19h30"), /*#__PURE__*/React.createElement("a", {
+  }), aberto ? "Aberto agora · fecha às 19h30" : "Fechado agora · Seg a Sáb 9h às 19h30"), /*#__PURE__*/React.createElement("a", {
     href: "#agendar",
     className: "btn btn-primary",
     onClick: e => {
@@ -330,13 +463,13 @@ function Hero({
     className: "hero-content"
   }, /*#__PURE__*/React.createElement("span", {
     className: "eyebrow rise d1"
-  }, "Santo Ant\xF4nio \xB7 Osasco \u2014 dentro do Posto Ipiranga"), /*#__PURE__*/React.createElement("h1", {
+  }, "Santo Ant\xF4nio \xB7 Osasco \xB7 dentro do Posto Ipiranga"), /*#__PURE__*/React.createElement("h1", {
     className: "rise d2"
   }, "Cortes que", /*#__PURE__*/React.createElement("br", null), "revelam", /*#__PURE__*/React.createElement("span", {
     className: "accent"
   }, "seu estilo")), /*#__PURE__*/React.createElement("p", {
     className: "hero-sub rise d3"
-  }, "Um time de barbeiros com capricho em cada detalhe e atendimento de gente que conhece voc\xEA pelo nome. Corte cl\xE1ssico ou moderno, barba e sobrancelha \u2014 do jeito que voc\xEA pede."), /*#__PURE__*/React.createElement("div", {
+  }, "Um time de barbeiros com capricho em cada detalhe e atendimento de gente que conhece voc\xEA pelo nome. Corte cl\xE1ssico ou moderno, barba e sobrancelha, do jeito que voc\xEA pede."), /*#__PURE__*/React.createElement("div", {
     className: "hero-ctas rise d4"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#agendar",
@@ -358,7 +491,7 @@ function Hero({
     className: "stat"
   }, /*#__PURE__*/React.createElement("b", null, "4.9", /*#__PURE__*/React.createElement("span", {
     className: "star"
-  }, "\u2605")), /*#__PURE__*/React.createElement("span", null, "Nota no Google")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(StarSolidIcon, null))), /*#__PURE__*/React.createElement("span", null, "Nota no Google")), /*#__PURE__*/React.createElement("div", {
     className: "stat"
   }, /*#__PURE__*/React.createElement("b", null, "50+"), /*#__PURE__*/React.createElement("span", null, "Avalia\xE7\xF5es reais")), /*#__PURE__*/React.createElement("div", {
     className: "stat"
@@ -372,7 +505,7 @@ function Marquee() {
   const items = ["Corte Clássico", "Corte Moderno", "Fade & Degradê", "Corte Infantil", "Barba na Navalha", "Sobrancelha", "Toalha Quente"];
   const row = items.map((t, i) => /*#__PURE__*/React.createElement("span", {
     key: i
-  }, t, /*#__PURE__*/React.createElement("i", null, "\u2702")));
+  }, t, /*#__PURE__*/React.createElement("i", null, /*#__PURE__*/React.createElement(ScissorsIcon, null))));
   return /*#__PURE__*/React.createElement("div", {
     className: "marquee",
     "aria-hidden": "true"
@@ -421,7 +554,7 @@ function Services({
     onClick: () => pick(s.id)
   }, "Agendar \u2192"))))), /*#__PURE__*/React.createElement("p", {
     className: "services-note reveal"
-  }, "Encaixes s\xE3o bem-vindos quando a cadeira est\xE1 livre \u2014 ", /*#__PURE__*/React.createElement("b", null, "mas agendar garante o seu hor\xE1rio."))));
+  }, "Encaixes s\xE3o bem-vindos quando a cadeira est\xE1 livre, ", /*#__PURE__*/React.createElement("b", null, "mas agendar garante o seu hor\xE1rio."))));
 }
 
 /* ---------------- equipe ---------------- */
@@ -435,18 +568,20 @@ function Team({
     className: "wrap team-grid"
   }, /*#__PURE__*/React.createElement("div", {
     className: "team-photo reveal"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "team-main"
   }, /*#__PURE__*/React.createElement("img", {
     src: "assets/team.jpg",
     alt: "Equipe de barbeiros da Nazza Barbearia reunida na loja",
     loading: "lazy"
-  }), /*#__PURE__*/React.createElement("img", {
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "exp-chip"
+  }, /*#__PURE__*/React.createElement("b", null, "Equipe"), /*#__PURE__*/React.createElement("span", null, "unida pelo capricho"))), /*#__PURE__*/React.createElement("img", {
     className: "team-photo-extra",
     src: "assets/team2.jpg",
     alt: "Barbeiro da equipe Nazza fazendo um corte infantil",
     loading: "lazy"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "exp-chip"
-  }, /*#__PURE__*/React.createElement("b", null, "Equipe"), /*#__PURE__*/React.createElement("span", null, "unida pelo capricho"))), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "team-copy reveal"
   }, /*#__PURE__*/React.createElement("span", {
     className: "eyebrow"
@@ -454,17 +589,17 @@ function Team({
     className: "h2"
   }, "A ", /*#__PURE__*/React.createElement("em", null, "equipe"), " Nazza"), /*#__PURE__*/React.createElement("p", {
     className: "team-role"
-  }, "Barbeiros \xB7 Um s\xF3 padr\xE3o de qualidade"), /*#__PURE__*/React.createElement("p", null, "A Nazza n\xE3o depende de um \xFAnico par de m\xE3os: \xE9 um time de barbeiros que trabalha junto, com o mesmo capricho e o mesmo padr\xE3o de acabamento. Quem chega pela primeira vez \xE9 recebido pelo nome; quem volta h\xE1 anos sabe que pode sentar em qualquer cadeira."), /*#__PURE__*/React.createElement("p", null, "Do cl\xE1ssico na tesoura ao fade navalhado, do corte infantil \xE0 barba desenhada, a equipe se complementa \u2014 e a loja, limpa e organizada, virou ponto de encontro do bairro Santo Ant\xF4nio."), /*#__PURE__*/React.createElement("ul", {
+  }, "Barbeiros \xB7 Um s\xF3 padr\xE3o de qualidade"), /*#__PURE__*/React.createElement("p", null, "A Nazza n\xE3o depende de um \xFAnico par de m\xE3os: \xE9 um time de barbeiros que trabalha junto, com o mesmo capricho e o mesmo padr\xE3o de acabamento. Quem chega pela primeira vez \xE9 recebido pelo nome; quem volta h\xE1 anos sabe que pode sentar em qualquer cadeira."), /*#__PURE__*/React.createElement("p", null, "Do cl\xE1ssico na tesoura ao fade navalhado, do corte infantil \xE0 barba desenhada, a equipe se complementa, e a loja, limpa e organizada, virou ponto de encontro do bairro Santo Ant\xF4nio."), /*#__PURE__*/React.createElement("ul", {
     className: "team-values"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "v-ic"
-  }, "\u2702"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "M\xE3o treinada, olho no detalhe"), "Cada barbeiro domina do cl\xE1ssico ao moderno, com acabamento conferido antes de voc\xEA sair da cadeira.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(ScissorsIcon, null)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "M\xE3o treinada, olho no detalhe"), "Cada barbeiro domina do cl\xE1ssico ao moderno, com acabamento conferido antes de voc\xEA sair da cadeira.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "v-ic"
-  }, "\u2714"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Cadeira limpa e organizada"), "Material higienizado e bancada em ordem a cada atendimento \u2014 ponto elogiado nas avalia\xE7\xF5es.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(CheckIcon, null)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Cadeira limpa e organizada"), "Material higienizado e bancada em ordem a cada atendimento, ponto elogiado nas avalia\xE7\xF5es.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "v-ic"
-  }, "\u2605"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Atendimento que conhece voc\xEA"), "Time unido pelo mesmo capricho: o corte que voc\xEA pediu, do jeito que voc\xEA pediu."))), /*#__PURE__*/React.createElement("blockquote", {
+  }, /*#__PURE__*/React.createElement(StarIcon, null)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Atendimento que conhece voc\xEA"), "Time unido pelo mesmo capricho: o corte que voc\xEA pediu, do jeito que voc\xEA pediu."))), /*#__PURE__*/React.createElement("blockquote", {
     className: "team-quote"
-  }, "\u201CBons profissionais e excelente atendimento. Lugar limpo e organizado.\u201D", /*#__PURE__*/React.createElement("footer", null, "\u2014 Douglas Marques \xB7 avalia\xE7\xE3o no Google")), /*#__PURE__*/React.createElement("div", {
+  }, "\u201CBons profissionais e excelente atendimento. Lugar limpo e organizado.\u201D", /*#__PURE__*/React.createElement("footer", null, "Douglas Marques \xB7 avalia\xE7\xE3o no Google")), /*#__PURE__*/React.createElement("div", {
     className: "chips"
   }, /*#__PURE__*/React.createElement("span", {
     className: "chip"
@@ -522,7 +657,7 @@ function Gallery({
     className: "h2"
   }, "Na ", /*#__PURE__*/React.createElement("em", null, "cadeira")), /*#__PURE__*/React.createElement("p", {
     className: "section-sub"
-  }, "Cada corte conta uma hist\xF3ria. Toque em uma foto para ampliar \u2014 use \u2190 \u2192 para navegar e Esc para fechar.")), /*#__PURE__*/React.createElement("div", {
+  }, "Cada corte conta uma hist\xF3ria. Toque em uma foto para ampliar, use \u2190 \u2192 para navegar e Esc para fechar.")), /*#__PURE__*/React.createElement("div", {
     className: "gallery-grid"
   }, GALLERY.map((g, i) => /*#__PURE__*/React.createElement("button", {
     className: "gallery-item reveal",
@@ -534,11 +669,11 @@ function Gallery({
     "aria-label": "Ampliar foto: " + g.cap
   }, /*#__PURE__*/React.createElement("img", {
     src: g.src,
-    alt: g.cap + " — " + g.sub,
+    alt: g.cap + ", " + g.sub,
     loading: "lazy"
   }), /*#__PURE__*/React.createElement("span", {
     className: "g-cap"
-  }, g.cap, /*#__PURE__*/React.createElement("i", null, "\u2922")))))), idx !== null && /*#__PURE__*/React.createElement("div", {
+  }, g.cap, /*#__PURE__*/React.createElement("i", null, /*#__PURE__*/React.createElement(ExpandIcon, null))))))), idx !== null && /*#__PURE__*/React.createElement("div", {
     className: "lightbox",
     onClick: close,
     role: "dialog",
@@ -550,7 +685,7 @@ function Gallery({
     className: "lb-close",
     onClick: close,
     "aria-label": "Fechar foto (Esc)"
-  }, "\u2715"), /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement(XIcon, null)), /*#__PURE__*/React.createElement("button", {
     className: "lb-btn lb-prev",
     onClick: e => {
       e.stopPropagation();
@@ -595,7 +730,7 @@ function Reviews() {
   }, "4.9"), /*#__PURE__*/React.createElement("div", {
     className: "rating-stars",
     "aria-label": "4,9 de 5 estrelas"
-  }, "\u2605\u2605\u2605\u2605\u2605"), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement(Stars, null)), /*#__PURE__*/React.createElement("p", {
     className: "rating-count"
   }, "50 avalia\xE7\xF5es no Google"), /*#__PURE__*/React.createElement("div", {
     className: "rating-tags"
@@ -636,7 +771,7 @@ function Reviews() {
   }, r.name.split(" ").map(p => p[0]).slice(0, 2).join("")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("b", null, r.name), /*#__PURE__*/React.createElement("small", null, r.meta)), /*#__PURE__*/React.createElement("span", {
     className: "review-stars",
     "aria-label": "5 estrelas"
-  }, "\u2605\u2605\u2605\u2605\u2605")), /*#__PURE__*/React.createElement("p", null, "\u201C", r.text, "\u201D")))))));
+  }, /*#__PURE__*/React.createElement(Stars, null))), /*#__PURE__*/React.createElement("p", null, "\u201C", r.text, "\u201D")))))));
 }
 
 /* ---------------- agendamento ---------------- */
@@ -689,11 +824,11 @@ function Booking({
     const digits = form.phone.replace(/\D/g, "");
     if (digits.length < 10) e.phone = "Digite um WhatsApp com DDD, ex.: (11) 98134-6370.";
     if (!form.service) e.service = "Escolha o serviço que você quer fazer.";
-    if (!form.date) e.date = "Escolha o dia da sua visita.";else if (form.date < minDate) e.date = "Essa data já passou. Escolha hoje ou um dia futuro.";else if (isSunday) e.date = "Domingo a barbearia está fechada. Escolha de segunda a sábado.";
+    if (!form.date) e.date = "Escolha o dia da sua visita.";else if (form.date < minDate) e.date = "Essa data já passou. Escolha hoje ou um dia futuro.";else if (isSunday) e.date = "Domingo a barbearia está fechada, escolha de segunda a sábado.";
     if (!e.date && !form.time) e.time = "Toque em um horário disponível acima.";
     setErrors(e);
     if (Object.keys(e).length) {
-      notify("Alguns campos precisam de atenção — veja as dicas em vermelho.", "error");
+      notify("Alguns campos precisam de atenção, veja as dicas em vermelho.", "error");
       setTimeout(() => {
         const first = cardRef.current && cardRef.current.querySelector(".field.error input, .field.error select, .field.error .slot:not([disabled])");
         if (first) first.focus();
@@ -709,8 +844,8 @@ function Booking({
       notify("Confira o resumo antes de confirmar.", "info");
     }
   };
-  const serviceName = (SERVICES.find(s => s.id === form.service) || {}).name || "—";
-  const whatsText = encodeURIComponent("Olá, Nazza Barbearia! Quero agendar um horário.\n\n" + "✂ Serviço: " + serviceName + "\n" + "📅 Data: " + fmtDate(form.date) + "\n" + "🕐 Horário: " + form.time + "\n" + "🙋 Nome: " + form.name.trim() + "\n" + "📱 WhatsApp: " + form.phone + "\n\n" + "Podem confirmar? Obrigado!");
+  const serviceName = (SERVICES.find(s => s.id === form.service) || {}).name || "a definir";
+  const whatsText = encodeURIComponent("Olá, Nazza Barbearia! Quero agendar um horário.\n\n" + "Serviço: " + serviceName + "\n" + "Data: " + fmtDate(form.date) + "\n" + "Horário: " + form.time + "\n" + "Nome: " + form.name.trim() + "\n" + "WhatsApp: " + form.phone + "\n\n" + "Podem confirmar? Obrigado!");
   const whatsLink = "https://wa.me/" + WHATS_NUMBER + "?text=" + whatsText;
   const confirm = () => {
     setStage("done");
@@ -737,7 +872,7 @@ function Booking({
     className: "step" + (i < stepIdx ? " done" : i === stepIdx ? " current" : "")
   }, /*#__PURE__*/React.createElement("span", {
     className: "step-dot"
-  }, i < stepIdx ? "✓" : i + 1), /*#__PURE__*/React.createElement("label", null, label)))), stage === "form" && /*#__PURE__*/React.createElement("form", {
+  }, i < stepIdx ? /*#__PURE__*/React.createElement(CheckIcon, null) : i + 1), /*#__PURE__*/React.createElement("label", null, label)))), stage === "form" && /*#__PURE__*/React.createElement("form", {
     onSubmit: toReview,
     noValidate: true
   }, /*#__PURE__*/React.createElement("div", {
@@ -755,7 +890,7 @@ function Booking({
     onChange: e => set("name", e.target.value)
   }), errors.name && /*#__PURE__*/React.createElement("span", {
     className: "field-msg"
-  }, errors.name)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(WarnIcon, null), errors.name)), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.phone ? " error" : "")
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: "f-phone"
@@ -769,7 +904,7 @@ function Booking({
     onChange: e => set("phone", maskPhone(e.target.value))
   }), errors.phone && /*#__PURE__*/React.createElement("span", {
     className: "field-msg"
-  }, errors.phone))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(WarnIcon, null), errors.phone))), /*#__PURE__*/React.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.service ? " error" : "")
@@ -786,7 +921,7 @@ function Booking({
     value: s.id
   }, s.name, " \xB7 \u2248", s.time))), errors.service && /*#__PURE__*/React.createElement("span", {
     className: "field-msg"
-  }, errors.service)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(WarnIcon, null), errors.service)), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.date ? " error" : "")
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: "f-date"
@@ -798,9 +933,9 @@ function Booking({
     onChange: e => set("date", e.target.value)
   }), errors.date ? /*#__PURE__*/React.createElement("span", {
     className: "field-msg"
-  }, errors.date) : isSunday ? /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(WarnIcon, null), errors.date) : isSunday ? /*#__PURE__*/React.createElement("span", {
     className: "field-msg"
-  }, "Domingo estamos fechados \u2014 escolha de segunda a s\xE1bado.") : /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(WarnIcon, null), "Domingo estamos fechados, escolha de segunda a s\xE1bado.") : /*#__PURE__*/React.createElement("span", {
     className: "field-hint"
   }, "Seg a S\xE1b \xB7 9h \xE0s 19h30 \xB7 domingo fechado"))), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.time ? " error" : "")
@@ -821,9 +956,9 @@ function Booking({
     onClick: () => set("time", s)
   }, s))), errors.time && /*#__PURE__*/React.createElement("span", {
     className: "field-msg"
-  }, errors.time), isToday && form.date && !isSunday && /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement(WarnIcon, null), errors.time), isToday && form.date && !isSunday && /*#__PURE__*/React.createElement("p", {
     className: "field-hint"
-  }, "Hor\xE1rios riscados j\xE1 passaram \u2014 mostramos s\xF3 o que ainda d\xE1 tempo.")), /*#__PURE__*/React.createElement("div", {
+  }, "Hor\xE1rios riscados j\xE1 passaram, mostramos s\xF3 o que ainda d\xE1 tempo.")), /*#__PURE__*/React.createElement("div", {
     className: "form-actions"
   }, /*#__PURE__*/React.createElement("button", {
     type: "submit",
@@ -834,7 +969,7 @@ function Booking({
     onClick: reset
   }, "Limpar formul\xE1rio")), /*#__PURE__*/React.createElement("p", {
     className: "privacy-note"
-  }, "Seus dados s\xE3o usados apenas para montar a mensagem de agendamento no WhatsApp. Nada \xE9 enviado sem voc\xEA confirmar.")), stage === "review" && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
+  }, /*#__PURE__*/React.createElement(LockIcon, null), "Seus dados s\xE3o usados apenas para montar a mensagem de agendamento no WhatsApp. Nada \xE9 enviado sem voc\xEA confirmar.")), stage === "review" && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
     className: "state-title"
   }, "Confira seu pedido"), /*#__PURE__*/React.createElement("p", {
     className: "state-sub"
@@ -856,9 +991,9 @@ function Booking({
     className: "state-title"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ok-ring"
-  }, "\u2713"), "Pedido pronto!"), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement(CheckIcon, null)), "Pedido pronto!"), /*#__PURE__*/React.createElement("p", {
     className: "state-sub"
-  }, "Abrimos o WhatsApp com sua mensagem preenchida \u2014 \xE9 s\xF3 tocar em enviar. A barbearia confirma seu hor\xE1rio por l\xE1, dentro do expediente."), /*#__PURE__*/React.createElement("dl", {
+  }, "Abrimos o WhatsApp com sua mensagem preenchida, \xE9 s\xF3 tocar em enviar. A barbearia confirma seu hor\xE1rio por l\xE1, dentro do expediente."), /*#__PURE__*/React.createElement("dl", {
     className: "summary-list"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Servi\xE7o"), /*#__PURE__*/React.createElement("dd", null, serviceName)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Data"), /*#__PURE__*/React.createElement("dd", {
     style: {
@@ -940,7 +1075,7 @@ function Contact({
     rel: "noopener noreferrer"
   }, "(11) 98134-6370"))), /*#__PURE__*/React.createElement("div", {
     className: "info-item"
-  }, /*#__PURE__*/React.createElement("dt", null, "Hor\xE1rios"), /*#__PURE__*/React.createElement("dd", null, "Seg\u2013S\xE1b \xB7 9h00 \u2013 19h30", /*#__PURE__*/React.createElement("br", null), "Domingo \xB7 fechado")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("dt", null, "Hor\xE1rios"), /*#__PURE__*/React.createElement("dd", null, "Seg a S\xE1b \xB7 9h00 \xE0s 19h30", /*#__PURE__*/React.createElement("br", null), "Domingo \xB7 fechado")), /*#__PURE__*/React.createElement("div", {
     className: "info-item"
   }, /*#__PURE__*/React.createElement("dt", null, "Instagram"), /*#__PURE__*/React.createElement("dd", null, /*#__PURE__*/React.createElement("a", {
     href: INSTAGRAM_URL,
@@ -962,7 +1097,7 @@ function Contact({
     className: "map-frame"
   }, /*#__PURE__*/React.createElement("iframe", {
     src: mapSrc,
-    title: "Mapa \u2014 Nazza Barbearia, Av. Jo\xE3o de Andrade 685, Osasco",
+    title: "Mapa: Nazza Barbearia, Av. Jo\xE3o de Andrade 685, Osasco",
     loading: "lazy"
   }), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-primary btn-sm map-link",
@@ -997,7 +1132,7 @@ function Faq() {
     "aria-expanded": open === i
   }, f.q, /*#__PURE__*/React.createElement("span", {
     className: "fx"
-  }, "\uFF0B")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(PlusIcon, null))), /*#__PURE__*/React.createElement("div", {
     className: "faq-a",
     style: {
       maxHeight: open === i ? 240 : 0
@@ -1065,11 +1200,11 @@ function Footer({
     href: MAPS_URL,
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Google Maps \xB7 4.9 \u2605 (50)"), /*#__PURE__*/React.createElement("p", {
+  }, "Google Maps \xB7 4.9 (50 avalia\xE7\xF5es)"), /*#__PURE__*/React.createElement("p", {
     style: {
       color: "var(--muted)"
     }
-  }, "Seg\u2013S\xE1b 9h\u201319h30 \xB7 Dom fechado"))), /*#__PURE__*/React.createElement("div", {
+  }, "Seg a S\xE1b 9h \xE0s 19h30 \xB7 Dom fechado"))), /*#__PURE__*/React.createElement("div", {
     className: "footer-bottom"
   }, /*#__PURE__*/React.createElement("span", null, "\xA9 ", new Date().getFullYear(), " Nazza Barbearia \xB7 Osasco/SP"), /*#__PURE__*/React.createElement("span", {
     className: "pole"
