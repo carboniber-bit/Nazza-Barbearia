@@ -7,6 +7,10 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
+      <image:loc>https://nazza-barbearia.vercel.app/assets/logo.png</image:loc>
+      <image:title>Emblema da Nazza Barbearia</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://nazza-barbearia.vercel.app/assets/og.jpg</image:loc>
       <image:title>Interior da Nazza Barbearia em Osasco</image:title>
     </image:image>
